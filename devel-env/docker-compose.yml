@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  devel-env:
+    image: plcc-in-docker.devel-env
+    build:
+      context: ../
+      dockerfile: ./devel-env/Dockerfile
+    environment:
+      GIT_AUTHOR:
+      EMAIL:
+      DOCKER_EXEC:
+      DOCKER_SOCKET:
+    volumes:
+      - "${DOCKER_SOCK}:/var/run/docker.sock:ro"
+      - "${DOCKER_EXEC}:/usr/local/bin/docker:ro"
+      - "${PWD}:/workdir"
