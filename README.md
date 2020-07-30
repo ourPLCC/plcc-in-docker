@@ -1,2 +1,2 @@
-# plcc-in-docker
+# PLCC-in-Docker
 PLCC installed into a Docker container
