@@ -4,8 +4,15 @@ set -ue
 
 IMAGES_TO_RELEASE=ourplcc/plcc-in-docker:build
 
-# Create a release commit.
-standard-version
+# If no release tag yet exists...
+if ! git describe --abbrev=0 &> /dev/null
+then
+  # Perform a first release.
+  standard-version --first-release
+else
+  # Perform a normal release.
+  standard-version
+fi
 
 # Get the new version from the git tag.
 VERSION="$(git describe --abbrev=0)"
