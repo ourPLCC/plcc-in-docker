@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -eux
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd "$DIR"
+docker-compose run --rm plcc-in-docker python3 --version
+docker-compose run --rm plcc-in-docker java -version
+docker-compose run --rm plcc-in-docker javac -version
+docker-compose run --rm plcc-in-docker bash --version
+docker-compose run --rm plcc-in-docker plcc --version

@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  devshell:
+    build:
+      context: ..
+      dockerfile: ./devshell/Dockerfile
+    image: devshell:build
+    environment:
+      GIT_AUTHOR:
+      EMAIL:
+    volumes:
+      - "${PWD}:/workdir"
+      - "${DOCKER_SOCK}:/var/run/docker.sock:ro"
+      - "${DOCKER_EXEC}:/usr/local/bin/docker:ro"

@@ -51,7 +51,7 @@ FROM ${ALPINE_IMAGE}
 
   # Copy over plcc from downloader stage.
   COPY --chown=plcc:plcc --from=downloader /plcc /plcc
-  ENV PATH="/plcc/Bash:${PATH}" LIBPLCC="/plcc"
+  ENV PATH="/plcc/Bash:${PATH}" LIBPLCC="/plcc/src"
 
   # Change user to dev.
   WORKDIR /workdir
