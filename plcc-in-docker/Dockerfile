@@ -7,7 +7,7 @@ ARG ALPINE_GIT_PACKAGE=git=2.26.2-r0
 ARG ALPINE_BASH_PACKAGE=bash=5.0.17-r0
 ARG ALPINE_PYTHON_PACKAGE=python3=3.8.5-r0
 ARG ALPINE_JAVA_PACKAGE=openjdk11=11.0.7_p10-r1
-ARG PLCC_GIT_COMMIT=v1.0.1
+ARG PLCC_GIT_COMMIT=v2.0.0
 
 FROM ${ALPINE_IMAGE} as downloader
   # Install git.
@@ -51,7 +51,7 @@ FROM ${ALPINE_IMAGE}
 
   # Copy over plcc from downloader stage.
   COPY --chown=plcc:plcc --from=downloader /plcc /plcc
-  ENV PATH="/plcc/Bash:${PATH}" LIBPLCC="/plcc/src"
+  ENV PATH="/plcc/src:${PATH}" LIBPLCC="/plcc/src"
 
   # Change user to dev.
   WORKDIR /workdir
