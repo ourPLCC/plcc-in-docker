@@ -37,28 +37,6 @@ docker pull ourplcc/plcc-in-docker:latest
 
 Now the new image will be used the next time you run plcc-in-docker.
 
-## Versions
+## Versions and Docker tags
 
-We follow SemVer. PLCC-in-Docker's version is not the same as PLCC's version. However, if there is a change in PLCC versions, the PLCC-in-Docker version will reflect that change appropriately.
-
-## Docker tags
-
-When a new image is released, the following tags are updated or created to point to the new image.
-
-- `:latest`
-- `:MAJOR`
-- `:MAJOR.MINOR`
-- `:MAJOR.MINOR.PATCH`
-- `:MAJOR.MINOR.PATCH-plccVERSION`
-
-In the above tags MAJOR, MINOR, and PATCH are the SemVer components of the version number of PLCC-in-Docker version number. VERSION is the version number of PLCC.
-
-For example, suppose version 2.4.5 of PLCC-in-Docker is release and it contains vesion 1.3.2 of PLCC. Then the following tags are created or updated to point to the new image.
-
-- `:latest`
-- `:2`
-- `:2.4`
-- `:2.4.5`
-- `:2.4.5-plcc1.3.2`
-
-If you want to always have the latest and greatest (but are willing to accept breaking changes), regularly pull and use `:latest`. If you only want new features and bug fixes for the version 2 family of releases (no breaking changes), then regularly pull and use `:2`. If you want only bug fixes for the 2.4 family, the regularly pull and use `2.4`. And if you don't want any updates, and want to use a specific version, either pull and use `:2.4.5` or `:2.4.5-plcc1.3.2`. Neither of these will move once pointed to an image. The only difference is that the longer one also encodes the version of PLCC you are pinned to.
+The version number of PLCC-in-Docker mirrors that of PLCC. So PLCC-in-Docker v2.0.1 contains PLCC v2.0.1.
